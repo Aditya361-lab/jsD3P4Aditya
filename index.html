@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<title> factorial finder app by master Aditya</title>
+		<style>
+			*{font-size:40px;}
+			body{background-color:orange;}
+			.btn{background-color:pink;color:black;width:20%;margin-left:2%;border-radius:20px:}
+			.btn:hover{color:white;}
+		#output{
+white-space:pre-wrap;
+word-wrap: break-word;
+line-height:1.5;
+}
+		</style>
+	</head>
+	<body>
+		<center>
+			<h1>factorial finder app</h1>
+			<form onsubmit="find()">
+		<input type="number" id="num" placeholder="enter positive integer" style="width:600px;"/>
+				<br/><br/>
+				<input type="submit" value="M1" class="btn"/>
+				<input type="submit" value="M2" class="btn"/>
+				<input type="submit" value="M3" class="btn"/>
+			</form>
+				<div id="output"/>
+			<script>
+				function find()
+				{
+					event.preventDefault();
+					let num=document.getElementById("num");
+					let msg=document.getElementById("msg");
+
+					if (num.value==="")
+					{
+						alert("num is empty");
+						msg.innerHTML="";
+						rating.focus();
+						return;
+					}
+
+					let n = parseInt(num.value);
+
+					if (n<0)
+					{
+						alert("num should be min 0");
+						msg.innerHTML="";
+						rating.focus();
+						return;
+					}
+					
+					let action=document.activeElement.value;
+					let ans="";
+
+					if(action==="M1")
+					{
+						let i=1n,f=1n;
+						while(i<=BigInt(n))
+						{
+							f=f*i;
+							i++;
+						}
+						ans="M1=" +f.toString();
+													document.getElementById('output').innerText=ans.toString();
+						
+					}
+					else if (action==="M2")
+					{
+						let i=1n,f=1n;
+						do
+						{
+							f=f*i;
+							i++;
+						}while(i<=BigInt(n));
+
+						ans="M2=" +f.toString();
+													document.getElementById('output').innerText=ans.toString();
+					}
+					else if(action==="M3")
+					{
+						let f=1n;
+						for(let i=1n; i<=BigInt(n); i++)
+						{
+							f=f*i;
+						}
+						ans="M3=" +f.toString();
+													document.getElementById('output').innerText=ans.toString();
+					}
+				}
+	
+			</script>
+		
+		</center>
+	
+	</body>
+</html>
